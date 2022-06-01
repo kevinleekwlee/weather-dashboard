@@ -2,11 +2,11 @@ let citySearchHistory = $("#city-search-history");
 let citiesArr = [];
 let key = "fc0d32df4e392cc2267af7ef4a9992fc";
 
-let cityName = document.querySelector(".cityName");
-let temp = document.querySelector(".temp");
-let wind = document.querySelector(".wind");
-let humid = document.querySelector(".humid");
-let uv = document.querySelector(".uv");
+let cityName = $("#cityName");
+let temp = $("#temp");
+let wind = $("#wind");
+let humid = $("#humid");
+let uv = $("#uv");
 
 init();
 displayDate();
@@ -85,10 +85,10 @@ function forecastWeather(cityInput){
           let humidValue = data.main.humidity;
           console.log(humidValue);
           //Add UV API 
-          cityName.innerHTML(cityNameValue);
-          temp.innerHTML(tempValue);
-          wind.innerHTML(windValue);
-          humid.innerHTML(humidValue);
+          cityName.text(cityNameValue);
+          temp.text(tempValue);
+          wind.text(windValue);
+          humid.text(humidValue);
         });
       } else {
         alert('Error: ' + response.statusText);
