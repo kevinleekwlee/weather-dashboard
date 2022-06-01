@@ -1,7 +1,22 @@
 let citySearchHistory = $("#city-search-history");
 let citiesArr = [];
+let key = "fc0d32df4e392cc2267af7ef4a9992fc";
+
+let cityName = document.querySelector(".cityName");
+let temp = document.querySelector(".temp");
+let wind = document.querySelector(".wind");
+let humid = document.querySelector(".humid");
+let uv = document.querySelector(".uv");
 
 init();
+displayDate();
+
+function displayDate() {
+    setInterval(function() {
+        var time = moment().format("MMM Do, YYYY, hh:mm:ss");
+        $("#currentDay").text(time);        
+    }, 1000);
+}
 
 function init(){
     let storedCities = JSON.parse(localStorage.getItem("searchedCities"));
@@ -36,6 +51,10 @@ $("#submitBtn").on("click",function(event){
 
     let city = $("#userInput").val().trim();
 
+    if(city === ""){
+        return;
+    }
+
     citiesArr.push(city);
 
     storeSearchHistory();
@@ -49,5 +68,33 @@ function clearTextInput() {
 }
 
 function forecastWeather(cityInput){
-    console.log(cityInput);
+    let apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=metric&appid=" + key;
+
+    fetch(apiUrl)
+    .then(function (response) {
+      if (response.ok) {
+        console.log(response);
+        response.json().then(function (data) {
+          console.log(data);
+          let cityNameValue = data.name;
+          console.log(cityNameValue);
+          let tempValue = data.main.temp;
+          console.log(tempValue);
+          let windValue = data.wind.speed;
+          console.log(windValue);
+          let humidValue = data.main.humidity;
+          console.log(humidValue);
+          //Add UV API 
+          cityName.innerHTML(cityNameValue);
+          temp.innerHTML(tempValue);
+          wind.innerHTML(windValue);
+          humid.innerHTML(humidValue);
+        });
+      } else {
+        alert('Error: ' + response.statusText);
+      }
+    })
+    .catch(function (error) {
+      alert('Could not connect to API');
+    });
 }
