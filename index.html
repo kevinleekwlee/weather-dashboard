@@ -27,19 +27,14 @@
                 <h3 class="card-header">Search for a City:</h3>
                 <!-- will need to add an id to the form in js -->
                 <form class="card-body">
-                  <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-                  <button type="submit" class="btn">Search</button>
+                  <input name="username" id="userInput" type="text" autofocus="true" class="form-input" />
+                  <button id="submitBtn" type="submit" class="btn">Search</button>
                 </form>
             </div>
             <div class="card">
-                <ul class="list-group list-group-flush">
-                <!-- list items will need to be generated according to user inputs. Placeholders for now. -->
-                    <li class="list-group-item">Cras justo odio</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
-                  </ul>
+                <ul id="city-search-history" class="list-group list-group-flush">
+                  <!-- City search history list items are populated through the JS -->
+                </ul>
             </div>
           </section>
 
