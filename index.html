@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Add font awesome link for weather icons -->
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header class="jumbotron jumbotron-fluid custom-jumbotron">
+        <div class="container text-center">
+          <h1>Weather Dashboard</h1>
+        </div>
+    </header>
+
+    <main class="container-fluid">
+        <div class="row">
+          <section class="col-12 col-md-4 col-lg-3">
+            <div class="card">
+                <h3 class="card-header">Search for a City:</h3>
+                <!-- will need to add an id to the form in js -->
+                <form class="card-body">
+                  <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+                  <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+            <div class="card">
+                <ul class="list-group list-group-flush">
+                <!-- list items will need to be generated according to user inputs. Placeholders for now. -->
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Morbi leo risus</li>
+                    <li class="list-group-item">Porta ac consectetur ac</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                  </ul>
+            </div>
+          </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

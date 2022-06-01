@@ -1,0 +1,27 @@
+:root {
+    --navy:#2c3e50;
+    --white:white;
+}
+
+body {
+    font-family:'Roboto', sans-serif;
+}
+
+.custom-jumbotron {
+    background-color: var(--navy);
+}
+
+h1 {
+    color: var(--white);
+}
+
+.form-input {
+    width:100%;
+}
+
+.btn {
+    background-color: var(--navy);
+    color: var(--white);
+    width:100%;
+    margin: 5px 0;
+}
