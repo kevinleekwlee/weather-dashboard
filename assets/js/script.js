@@ -36,11 +36,11 @@ let futureHumid3 = $("#futureHumid3");
 let futureHumid4 = $("#futureHumid4");
 let futureHumid5 = $("#futureHumid5");
 
-let icon1 = $("#icon1");
-let icon2 = $("#icon2");
-let icon3 = $("#icon3");
-let icon4 = $("#icon4");
-let icon5 = $("#icon5");
+let icon1 = $(".icon1");
+let icon2 = $(".icon2");
+let icon3 = $(".icon3");
+let icon4 = $(".icon4");
+let icon5 = $(".icon5");
 
 init();
 displayDate();
@@ -170,6 +170,8 @@ function forecastWeather(cityInput){
                             uv.attr("class","purple")
                         }
 
+                        // Forecast for the next 5 days.
+
                         let fiveUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + key + "&units=metric";
 
                         fetch(fiveUrl)
@@ -178,6 +180,8 @@ function forecastWeather(cityInput){
                                     console.log(response);
                                     response.json().then(function(data){
                                         console.log(data);
+
+                                        $(".card-custom").attr("style","display:block");
 
                                         // Date for the next 5 days. 
 
@@ -272,22 +276,27 @@ function forecastWeather(cityInput){
                                         let icon1Value = data.list[4].weather[0].icon;
                                         console.log(icon1Value);
                                         icon1.attr("src","http://openweathermap.org/img/wn/" + icon1Value + "@2x.png");
+                                        icon1.attr("style","display:block");
 
                                         let icon2Value = data.list[12].weather[0].icon;
                                         console.log(icon2Value);
                                         icon2.attr("src","http://openweathermap.org/img/wn/" + icon2Value + "@2x.png");
+                                        icon2.attr("style","display:block");
 
                                         let icon3Value = data.list[20].weather[0].icon;
                                         console.log(icon3Value);
                                         icon3.attr("src","http://openweathermap.org/img/wn/" + icon3Value + "@2x.png");
+                                        icon3.attr("style","display:block");
 
                                         let icon4Value = data.list[28].weather[0].icon;
                                         console.log(icon4Value);
                                         icon4.attr("src","http://openweathermap.org/img/wn/" + icon4Value + "@2x.png");
+                                        icon4.attr("style","display:block");
 
                                         let icon5Value = data.list[36].weather[0].icon;
                                         console.log(icon5Value);
                                         icon5.attr("src","http://openweathermap.org/img/wn/" + icon5Value + "@2x.png");
+                                        icon5.attr("style","display:block");
                                     })
                                 }
                             })

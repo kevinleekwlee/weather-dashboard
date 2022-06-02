@@ -39,6 +39,8 @@ h1,h4 {
 .card-custom {
     padding:2%;
     border:none;
+    background-color: var(--aqua);
+    display: none;
 }
 
 .icon1,
@@ -48,6 +50,7 @@ h1,h4 {
 .icon5 {
     height:50px;
     width:50px;
+    display:none;
 }
 
 .green {
